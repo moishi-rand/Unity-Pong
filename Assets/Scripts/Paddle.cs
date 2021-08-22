@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- public enum PlayerPaddle
+ public enum PlayerNumber
 {
-    Paddle1,
-    Paddle2
+    Player1,
+    Player2
 }
 
 public class Paddle : MonoBehaviour
@@ -18,7 +18,7 @@ public class Paddle : MonoBehaviour
     private float moveNegativeRange = -5f;
 
     [SerializeField]
-    private PlayerPaddle myPaddle;
+    private PlayerNumber myPaddle;
 
     private bool acceptsInput = true;
     
@@ -33,12 +33,12 @@ public class Paddle : MonoBehaviour
 
         float input = 0;
 
-        if (myPaddle == PlayerPaddle.Paddle1)
+        if (myPaddle == PlayerNumber.Player1)
         {
             input = Input.GetAxis("Vertical");
         }
         
-        if(myPaddle == PlayerPaddle.Paddle2)
+        if(myPaddle == PlayerNumber.Player2)
         {
             input = Input.GetAxis("Vertical2");
         }
