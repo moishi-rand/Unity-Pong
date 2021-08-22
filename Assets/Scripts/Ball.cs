@@ -48,6 +48,11 @@ public class Ball : MonoBehaviour
             StartCoroutine(ResetGame());
             other.GetComponent<Goal>().AddPoint();
         }
+        else if(other.gameObject.CompareTag("AddBall"))
+        {
+            other.GetComponent<AddBall>().AddBallToGame();
+            Destroy(other.gameObject);
+        }
 
 
         currentSpeed += speedIncrease;
